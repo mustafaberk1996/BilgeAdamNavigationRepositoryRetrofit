@@ -24,7 +24,7 @@ class PostRepositoryImpl:PostRepository {
 
     override suspend fun update(post: Post): Boolean {
         return runCatching {
-            service.update(post, post.id)
+            val post = service.update(post, post.id)
         }.isSuccess
     }
 }

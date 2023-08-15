@@ -15,6 +15,7 @@ import com.example.navigationwithtoolbartitlelesson.R
 import com.example.navigationwithtoolbartitlelesson.data.state.PostDeleteState
 import com.example.navigationwithtoolbartitlelesson.data.state.PostDetailState
 import com.example.navigationwithtoolbartitlelesson.databinding.FragmentPostDetailBinding
+import com.example.navigationwithtoolbartitlelesson.ui.updatePost.UpdatePostFragmentDirections
 import kotlinx.coroutines.launch
 
 
@@ -67,6 +68,11 @@ class PostDetailFragment : Fragment(R.layout.fragment_post_detail) {
     }
 
     private fun initListeners() {
+        binding.btnGoUpdate.setOnClickListener {
+            val action = PostDetailFragmentDirections.actionPostDetailFragmentToUpdatePostFragment(args.id)
+            findNavController().navigate(action)
+        }
+
         binding.ivDelete.setOnClickListener {
             viewModel.delete(args.id)
         }

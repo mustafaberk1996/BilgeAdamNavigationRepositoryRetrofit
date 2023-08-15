@@ -48,6 +48,9 @@
         <action
             android:id="@+id/action_postDetailFragment_to_postsFragment"
             app:destination="@id/postsFragment" />
+        <action
+            android:id="@+id/action_postDetailFragment_to_updatePostFragment"
+            app:destination="@id/updatePostFragment" />
     </fragment>
     <activity
         android:id="@+id/drawerActivity"
@@ -58,5 +61,7 @@
         android:id="@+id/updatePostFragment"
         android:name="com.example.navigationwithtoolbartitlelesson.ui.updatePost.UpdatePostFragment"
         android:label="fragment_update_post"
-        tools:layout="@layout/fragment_update_post" />
+        tools:layout="@layout/fragment_update_post">
+        <argument android:name="postId" app:argType="integer" />
+    </fragment>
 </navigation>

@@ -8,4 +8,5 @@
     <include
         android:id="@+id/includeAddOrUpdatePost"
         layout="@layout/cl_post_add_or_update" />
+
 </FrameLayout>
